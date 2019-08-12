@@ -5,10 +5,18 @@
 .header {
   width: 100%;
   font-size: 2rem;
-  color: #2A77AE;
+  color:rgb(220, 134, 108);
   margin-bottom: 20px;
 }
 
 .scores {
   float: right;
+}
+
+.scores:hover {
+  color: red;
+}
+
+.title:hover {
+  color: red;
 }

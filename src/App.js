@@ -17,7 +17,7 @@ class App extends Component {
   gameEnd = () => {
     if (this.state.score > this.state.topScore) {
       this.setState({topScore: this.state.score}, function () {
-        console.log(this.state.topScore);
+        // console.log(this.state.topScore);
       });
     }
     this.state.cards.forEach(card => {
@@ -34,7 +34,7 @@ class App extends Component {
         if (cards[i].count === 0){
           cards[i].count = cards[i].count + 1;
           this.setState({score: this.state.score + 1}, function() {
-            console.log(this.state.score);
+            // console.log(this.state.score);
           });
           this.state.cards.sort(() => Math.random() - 0.5)
           return true;
@@ -49,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header score={this.state.score} topScore={this.state.topScore}>Clicky Game</Header>
+        <Header score={this.state.score} topScore={this.state.topScore}>Memory Game</Header>
         {this.state.cards.map(friend => (
           <Card
           clickCount={this.clickCount}
