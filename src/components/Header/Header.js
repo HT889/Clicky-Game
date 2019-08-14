@@ -1,13 +1,20 @@
 import React from "react";
 import "./header.css";
 
-const Header = props => (
+
+// const Header = ({ score, children, topScore }) => {}
+
+const Header = props => {
+  const { score, children, topScore } = props
+  console.log(score)
+  return (
   <div className="header">
-    <div className="title">{props.children}</div>
+    <div className="title">{children}</div>
     <div className="scores">
-      Score: {props.score} Highscore: {props.topScore}
+      Score: {score} Highscore: {topScore}
     </div>
   </div>
-);
+  )
+};
 
 export default Header;

@@ -29,14 +29,14 @@ class App extends Component {
   }
 
   clickCount = id => {
-    this.state.cards.find((o, i) => {
+    const { cards, score } = this.state
+    cards.find( o  => {
+      console.log(o)
       if(o.id === id) {
-        if (cards[i].count === 0){
-          cards[i].count = cards[i].count + 1;
-          this.setState({score: this.state.score + 1}, function() {
-            // console.log(this.state.score);
-          });
-          this.state.cards.sort(() => Math.random() - 0.5)
+        if (o.count === 0){
+          o.count = o.count + 1;
+          this.setState({score: score + 1})
+          cards.sort(() => Math.random() - 0.5)
           return true;
         } else {
           this.gameEnd();
